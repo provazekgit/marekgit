@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  linuxcli-tests:
+    build:
+      context: .
+      target: tests
+    container_name: linuxcli_test
+    stdin_open: true
+    tty: true
+    command: bash
+
+  linuxcli-prod:
+    build:
+      context: .
+      target: production
+    container_name: linuxcli_prod
+    command: ipinfo
